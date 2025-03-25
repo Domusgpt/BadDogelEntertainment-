@@ -1,0 +1,547 @@
+/**
+ * category-components.css
+ * 
+ * Implements styled components and visual treatments specific to each
+ * content category in the Bad Dog Entertainment digital magazine.
+ * 
+ * Each category has its own visual language, color scheme, and UI treatments
+ * that reinforce the editorial direction while maintaining brand cohesion.
+ */
+
+/* ============================================
+   Category Hero Section Styling
+   Lines 12-96
+   ============================================ */
+
+.category-hero {
+  position: relative;
+  padding: var(--space-12) 0 var(--space-8);
+  color: var(--color-white);
+  background-color: var(--color-black);
+  overflow: hidden;
+}
+
+.category-hero .pattern-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.15;
+  z-index: 0;
+}
+
+.category-hero-content {
+  position: relative;
+  z-index: 1;
+  max-width: 800px;
+}
+
+.category-title {
+  font-size: var(--font-size-4xl);
+  margin-bottom: var(--space-4);
+  letter-spacing: var(--letter-spacing-tighter);
+  line-height: 1;
+}
+
+.category-description {
+  font-size: var(--font-size-lg);
+  line-height: var(--line-height-relaxed);
+  opacity: 0.9;
+  margin-bottom: var(--space-6);
+}
+
+/* Category-specific hero styling */
+.category-page.chemical .category-hero {
+  background-color: rgba(0, 0, 0, 0.9);
+  border-bottom: 4px solid var(--color-chemical);
+}
+
+.category-page.afterhours .category-hero {
+  background-color: rgba(0, 0, 0, 0.85);
+  border-bottom: 4px solid var(--color-afterhours);
+}
+
+.category-page.exotic .category-hero {
+  background-color: rgba(0, 0, 0, 0.8);
+  border-bottom: 4px solid var(--color-exotic);
+}
+
+.category-page.luxury .category-hero {
+  background-color: rgba(0, 0, 0, 0.9);
+  border-bottom: 4px solid var(--color-luxury);
+}
+
+.category-page.degenerate .category-hero {
+  background-color: rgba(0, 0, 0, 0.85);
+  border-bottom: 4px solid var(--color-degenerate);
+}
+
+/* Category filter controls */
+.category-filters {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  margin-top: var(--space-6);
+}
+
+.filter-label {
+  font-family: var(--font-display);
+  text-transform: uppercase;
+  font-size: var(--font-size-sm);
+  letter-spacing: var(--letter-spacing-wide);
+  opacity: 0.7;
+}
+
+.filter-buttons {
+  display: flex;
+  gap: var(--space-2);
+}
+
+.filter-toggle {
+  background: none;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: var(--color-white);
+  padding: var(--space-1) var(--space-3);
+  border-radius: var(--radius-full);
+  font-family: var(--font-display);
+  font-size: var(--font-size-sm);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.filter-toggle:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.filter-toggle.active {
+  background-color: var(--color-white);
+  color: var(--color-black);
+  border-color: var(--color-white);
+}
+
+/* Category-specific filter button styling */
+.chemical .filter-toggle.active {
+  background-color: var(--color-chemical);
+  border-color: var(--color-chemical);
+  color: var(--color-black);
+}
+
+.afterhours .filter-toggle.active {
+  background-color: var(--color-afterhours);
+  border-color: var(--color-afterhours);
+}
+
+.exotic .filter-toggle.active {
+  background-color: var(--color-exotic);
+  border-color: var(--color-exotic);
+  color: var(--color-black);
+}
+
+.luxury .filter-toggle.active {
+  background-color: var(--color-luxury);
+  border-color: var(--color-luxury);
+}
+
+.degenerate .filter-toggle.active {
+  background-color: var(--color-degenerate);
+  border-color: var(--color-degenerate);
+}
+
+/* ============================================
+   Category Featured Section
+   Lines 98-141
+   ============================================ */
+
+.category-featured {
+  padding: var(--space-12) 0;
+  background-color: var(--color-light);
+}
+
+/* Category-specific featured section styling */
+.chemical .category-featured {
+  background-color: rgba(0, 255, 204, 0.05);
+}
+
+.afterhours .category-featured {
+  background-color: rgba(255, 0, 102, 0.05);
+}
+
+.exotic .category-featured {
+  background-color: rgba(255, 204, 0, 0.05);
+}
+
+.luxury .category-featured {
+  background-color: rgba(0, 102, 255, 0.05);
+}
+
+.degenerate .category-featured {
+  background-color: rgba(255, 51, 0, 0.05);
+}
+
+.featured-title {
+  font-size: var(--font-size-2xl);
+  margin-bottom: var(--space-4);
+  line-height: var(--line-height-tight);
+}
+
+/* Category-specific text coloring */
+.chemical .featured-title {
+  color: var(--color-dark);
+  text-shadow: 1px 1px 0px rgba(0, 255, 204, 0.2);
+}
+
+.afterhours .featured-title {
+  color: var(--color-dark);
+  text-shadow: 1px 1px 0px rgba(255, 0, 102, 0.2);
+}
+
+.exotic .featured-title {
+  color: var(--color-dark);
+  text-shadow: 1px 1px 0px rgba(255, 204, 0, 0.2);
+}
+
+.luxury .featured-title {
+  color: var(--color-dark);
+  text-shadow: 1px 1px 0px rgba(0, 102, 255, 0.2);
+}
+
+.degenerate .featured-title {
+  color: var(--color-dark);
+  text-shadow: 1px 1px 0px rgba(255, 51, 0, 0.2);
+}
+
+/* ============================================
+   Category Articles Section
+   Lines 143-225
+   ============================================ */
+
+.category-articles {
+  padding: var(--space-12) 0;
+}
+
+.section-title {
+  font-size: var(--font-size-2xl);
+  margin-bottom: var(--space-8);
+  text-align: center;
+}
+
+/* Card variations for article grid */
+.article-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Alternate layout - content on left, image on right */
+.article-card.alt-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.article-card.alt-layout .card-content {
+  order: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: var(--space-6);
+}
+
+.article-card.alt-layout .card-image {
+  order: 1;
+}
+
+/* Accent card with left border */
+.article-card.accent-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.article-card.accent-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 6px;
+  height: 100%;
+}
+
+/* Category-specific accent styling */
+.article-card.accent-card.chemical::before {
+  background-color: var(--color-chemical);
+}
+
+.article-card.accent-card.afterhours::before {
+  background-color: var(--color-afterhours);
+}
+
+.article-card.accent-card.exotic::before {
+  background-color: var(--color-exotic);
+}
+
+.article-card.accent-card.luxury::before {
+  background-color: var(--color-luxury);
+}
+
+.article-card.accent-card.degenerate::before {
+  background-color: var(--color-degenerate);
+}
+
+/* Video card with play indicator */
+.article-card.video-card .card-image {
+  position: relative;
+}
+
+.video-indicator {
+  position: absolute;
+  bottom: var(--space-3);
+  right: var(--space-3);
+  background-color: rgba(0, 0, 0, 0.7);
+  color: var(--color-white);
+  border-radius: var(--radius-full);
+  padding: var(--space-1) var(--space-3);
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.video-icon {
+  font-size: var(--font-size-md);
+}
+
+.video-duration {
+  font-family: var(--font-sans);
+  font-size: var(--font-size-sm);
+}
+
+/* Card quote highlight */
+.card-quote {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: var(--font-size-md);
+  padding: var(--space-4) 0;
+  position: relative;
+  color: var(--color-gray-800);
+}
+
+.card-quote::before {
+  content: """;
+  font-size: 3em;
+  line-height: 0.1;
+  position: absolute;
+  left: -0.4em;
+  top: 0.4em;
+  opacity: 0.3;
+}
+
+/* ============================================
+   Trending Topics Section
+   Lines 227-277
+   ============================================ */
+
+.trending-topics {
+  padding: var(--space-12) 0;
+  background-color: var(--color-dark);
+  color: var(--color-white);
+  position: relative;
+  overflow: hidden;
+}
+
+.trending-topics .pattern-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.05;
+  z-index: 0;
+}
+
+.trending-topics .section-title {
+  position: relative;
+  z-index: 1;
+  color: var(--color-white);
+}
+
+.topics-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: var(--space-4);
+  position: relative;
+  z-index: 1;
+}
+
+.topic-card {
+  background-color: rgba(255, 255, 255, 0.05);
+  border-radius: var(--radius-md);
+  padding: var(--space-4);
+  text-decoration: none;
+  color: var(--color-white);
+  transition: all 0.2s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.topic-card:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  transform: translateY(-2px);
+}
+
+.topic-name {
+  font-family: var(--font-display);
+  font-weight: var(--font-weight-bold);
+  font-size: var(--font-size-md);
+  margin-bottom: var(--space-2);
+}
+
+.topic-count {
+  font-family: var(--font-sans);
+  font-size: var(--font-size-sm);
+  opacity: 0.7;
+}
+
+/* Category-specific topic cards */
+.chemical .topic-card:hover {
+  border-color: var(--color-chemical);
+  box-shadow: 0 0 15px rgba(0, 255, 204, 0.2);
+}
+
+.afterhours .topic-card:hover {
+  border-color: var(--color-afterhours);
+  box-shadow: 0 0 15px rgba(255, 0, 102, 0.2);
+}
+
+/* ============================================
+   Category Newsletter Section
+   Lines 279-325
+   ============================================ */
+
+.category-newsletter {
+  color: var(--color-white);
+  padding: var(--space-12) 0;
+}
+
+/* Category-specific newsletter styling */
+.category-newsletter.chemical {
+  background-color: var(--color-chemical);
+  color: var(--color-black);
+}
+
+.category-newsletter.chemical .btn.secondary {
+  color: var(--color-black);
+  border-color: var(--color-black);
+}
+
+.category-newsletter.chemical .btn.secondary:hover {
+  background-color: var(--color-black);
+  color: var(--color-chemical);
+}
+
+.category-newsletter.afterhours {
+  background-color: var(--color-afterhours);
+}
+
+.category-newsletter.exotic {
+  background-color: var(--color-exotic);
+  color: var(--color-black);
+}
+
+.category-newsletter.exotic .btn.secondary {
+  color: var(--color-black);
+  border-color: var(--color-black);
+}
+
+.category-newsletter.exotic .btn.secondary:hover {
+  background-color: var(--color-black);
+  color: var(--color-exotic);
+}
+
+.category-newsletter.luxury {
+  background-color: var(--color-luxury);
+}
+
+.category-newsletter.degenerate {
+  background-color: var(--color-degenerate);
+}
+
+/* ============================================
+   Animation Enhancements
+   Lines 327-391
+   ============================================ */
+
+/* Progressive reveal of article cards */
+.animate-on-scroll {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.animate-on-scroll.animated {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Staggered animation delay based on element position */
+.article-grid .animate-on-scroll:nth-child(2) {
+  transition-delay: 0.1s;
+}
+
+.article-grid .animate-on-scroll:nth-child(3) {
+  transition-delay: 0.2s;
+}
+
+.article-grid .animate-on-scroll:nth-child(4) {
+  transition-delay: 0.3s;
+}
+
+.article-grid .animate-on-scroll:nth-child(5) {
+  transition-delay: 0.4s;
+}
+
+.article-grid .animate-on-scroll:nth-child(6) {
+  transition-delay: 0.5s;
+}
+
+/* Hover effects for article cards */
+.article-card:hover .card-image img {
+  transform: scale(1.05);
+}
+
+/* Special hover effects based on category */
+.article-card.chemical:hover {
+  box-shadow: 0 10px 25px rgba(0, 255, 204, 0.15);
+}
+
+.article-card.afterhours:hover {
+  box-shadow: 0 10px 25px rgba(255, 0, 102, 0.15);
+}
+
+.article-card.exotic:hover {
+  box-shadow: 0 10px 25px rgba(255, 204, 0, 0.15);
+}
+
+.article-card.luxury:hover {
+  box-shadow: 0 10px 25px rgba(0, 102, 255, 0.15);
+}
+
+.article-card.degenerate:hover {
+  box-shadow: 0 10px 25px rgba(255, 51, 0, 0.15);
+}
+
+/* Author mini component styling */
+.author-mini {
+  display: flex;
+  align-items: center;
+}
+
+.author-mini-image {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  margin-right: var(--space-2);
+  object-fit: cover;
+}
+
+.author-mini-name {
+  font-family: var(--font-sans);
+  font-size: var(--font-size-xs);
+  color: var(--color-gray-600);
+}
