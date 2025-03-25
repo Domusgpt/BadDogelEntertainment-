@@ -1,0 +1,664 @@
+/**
+ * responsive.css
+ * 
+ * Comprehensive responsive design system for Bad Dog Entertainment
+ * Implements a mobile-first approach with progressive enhancement
+ * 
+ * This file contains responsive adjustments that extend the base styling
+ * defined in style.css, ensuring optimal presentation across all devices
+ */
+
+/* ============================================
+   Responsive Typography Scaling
+   Lines 10-48
+   ============================================ */
+
+/* Base mobile typography adjustments */
+@media (max-width: 639px) {
+  :root {
+    /* Slightly reduce base font size on smallest screens */
+    font-size: 15px;
+  }
+  
+  h1, .article-title {
+    font-size: var(--font-size-2xl); /* 3rem -> 2rem */
+    letter-spacing: var(--letter-spacing-tight);
+  }
+  
+  h2, .section-title {
+    font-size: var(--font-size-xl); /* 2rem -> 1.5rem */
+  }
+  
+  h3 {
+    font-size: var(--font-size-lg); /* 1.5rem -> 1.25rem */
+  }
+  
+  .lead {
+    font-size: var(--font-size-md); /* 1.5rem -> 1.125rem */
+  }
+  
+  .pullquote {
+    font-size: var(--font-size-lg); /* 2rem -> 1.5rem */
+    padding: var(--space-4) 0;
+    margin: var(--space-6) 0;
+  }
+}
+
+/* Tablet typography scaling */
+@media (min-width: 640px) and (max-width: 1023px) {
+  h1, .article-title {
+    font-size: calc(var(--font-size-2xl) * 1.25); /* Scale between mobile and desktop */
+  }
+  
+  .lead {
+    font-size: var(--font-size-lg);
+  }
+}
+
+/* Large desktop typography enhancements */
+@media (min-width: 1440px) {
+  :root {
+    /* Slightly increase base font size on large screens */
+    font-size: 17px;
+  }
+}
+
+/* ============================================
+   Header & Navigation Responsiveness
+   Lines 50-131
+   ============================================ */
+
+/* Mobile header styling */
+@media (max-width: 1023px) {
+  .site-header {
+    padding: var(--space-2) 0;
+  }
+  
+  /* Mobile navigation menu */
+  .main-nav {
+    display: none; /* Hidden by default */
+    position: fixed;
+    top: 60px; /* Header height */
+    left: 0;
+    width: 100%;
+    height: calc(100vh - 60px);
+    background-color: var(--color-black);
+    z-index: var(--z-fixed);
+    padding: var(--space-6) var(--space-4);
+    overflow-y: auto;
+  }
+  
+  .main-nav.active {
+    display: block;
+    animation: slideInNav 0.3s ease forwards;
+  }
+  
+  @keyframes slideInNav {
+    from {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .main-nav ul {
+    flex-direction: column;
+    gap: var(--space-6);
+  }
+  
+  .main-nav ul li {
+    width: 100%;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding-bottom: var(--space-4);
+  }
+  
+  .nav-link {
+    font-size: var(--font-size-lg);
+    display: block;
+    padding: var(--space-2) 0;
+  }
+  
+  /* Enhanced mobile menu toggle button */
+  .menu-toggle {
+    display: block;
+    width: 30px;
+    height: 24px;
+    position: relative;
+    z-index: var(--z-fixed);
+  }
+  
+  .menu-toggle span {
+    transition: transform 0.3s ease, opacity 0.3s ease;
+  }
+  
+  .menu-toggle.active span:nth-child(1) {
+    transform: rotate(45deg) translate(6px, 6px);
+  }
+  
+  .menu-toggle.active span:nth-child(2) {
+    opacity: 0;
+  }
+  
+  .menu-toggle.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(6px, -6px);
+  }
+}
+
+/* Prevent transition flicker when resizing from mobile to desktop */
+@media (min-width: 1024px) {
+  .main-nav {
+    display: block !important; /* Always show on desktop */
+    height: auto;
+    position: relative;
+    top: 0;
+    padding: 0;
+    background-color: transparent;
+    overflow-y: visible;
+  }
+}
+
+/* Header scrolling behavior */
+.header-scrolled {
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  background-color: rgba(0, 0, 0, 0.95);
+}
+
+.header-hidden {
+  transform: translateY(-100%);
+  transition: transform 0.3s ease;
+}
+
+/* ============================================
+   Container & Grid Responsiveness
+   Lines 133-185
+   ============================================ */
+
+/* Adjust container width and padding based on viewport */
+@media (max-width: 639px) {
+  .container {
+    --container-width: 100%;
+    --container-padding: var(--space-3);
+  }
+}
+
+@media (min-width: 640px) and (max-width: 1023px) {
+  .container {
+    --container-width: 90%;
+    --container-padding: var(--space-4);
+  }
+}
+
+@media (min-width: 1024px) {
+  .container {
+    --container-width: 85%;
+    --container-padding: var(--space-4);
+  }
+}
+
+@media (min-width: 1440px) {
+  .container {
+    --container-width: 80%;
+    --container-max-width: 1400px;
+  }
+}
+
+/* Featured grid adaptive layout */
+@media (max-width: 767px) {
+  .featured-grid {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-6);
+  }
+  
+  .featured-image {
+    order: -1; /* Image above content on mobile */
+    margin-bottom: var(--space-4);
+  }
+}
+
+/* Article grid adjustments */
+@media (max-width: 639px) {
+  .article-grid {
+    gap: var(--space-8);
+  }
+  
+  /* Stack all cards vertically on mobile */
+  .article-card.featured,
+  .article-card.col-span-2 {
+    display: block;
+  }
+}
+
+/* Category feature grid adjustments */
+@media (max-width: 767px) {
+  .category-feature-grid .feature-main,
+  .category-feature-grid .feature-secondary {
+    margin-bottom: var(--space-6);
+  }
+}
+
+/* ============================================
+   Article Page Responsiveness
+   Lines 187-250
+   ============================================ */
+
+/* Article header adaptations */
+@media (max-width: 767px) {
+  .article-header {
+    padding: var(--space-6) 0;
+  }
+  
+  .article-title {
+    margin-bottom: var(--space-4);
+  }
+  
+  .article-meta {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-2);
+  }
+  
+  .share-links {
+    margin-top: var(--space-2);
+  }
+}
+
+/* Article content layout adjustments */
+@media (max-width: 1023px) {
+  .article-content .container {
+    display: block; /* Remove grid layout on mobile/tablet */
+  }
+  
+  .article-sidebar {
+    margin-top: var(--space-8);
+    border-top: 1px solid var(--color-gray-300);
+    padding-top: var(--space-6);
+  }
+  
+  /* Collapse sidebar into horizontal sections on tablet */
+  @media (min-width: 640px) and (max-width: 1023px) {
+    .article-sidebar {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: var(--space-6);
+    }
+  }
+  
+  /* Adjust article image sizing */
+  .article-image {
+    margin: var(--space-6) -15px; /* Extend slightly beyond content container */
+    width: calc(100% + 30px);
+  }
+  
+  @media (min-width: 640px) {
+    .article-image {
+      margin: var(--space-6) 0;
+      width: 100%;
+    }
+  }
+  
+  /* Make pullquotes less prominent on mobile */
+  .pullquote {
+    padding: 0 var(--space-4);
+    margin: var(--space-6) 0;
+  }
+}
+
+/* Desktop article layout with sticky sidebar */
+@media (min-width: 1024px) {
+  .article-content .container {
+    display: grid;
+    grid-template-columns: 7fr 3fr;
+    gap: var(--space-8);
+  }
+  
+  .article-sidebar {
+    position: sticky;
+    top: calc(var(--space-8) + 60px); /* Header height + offset */
+    height: max-content;
+    padding-left: var(--space-6);
+    border-left: 1px solid var(--color-gray-300);
+  }
+}
+
+/* Reading progress indicator positioning */
+.reading-progress-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background-color: rgba(0, 0, 0, 0.1);
+  z-index: var(--z-sticky);
+}
+
+.reading-progress {
+  height: 100%;
+  background-color: var(--color-primary);
+  transform-origin: left center;
+  transform: scaleX(0);
+  transition: transform 0.1s linear;
+}
+
+/* ============================================
+   Category Page Responsiveness
+   Lines 252-313
+   ============================================ */
+
+/* Category hero section adaptations */
+@media (max-width: 767px) {
+  .category-hero {
+    padding: var(--space-6) 0;
+  }
+  
+  .category-hero-content {
+    max-width: 100%;
+  }
+  
+  .category-description {
+    font-size: var(--font-size-base);
+  }
+  
+  /* Simplify filter interface on mobile */
+  .category-filters {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .filter-label {
+    margin-bottom: var(--space-2);
+  }
+  
+  .filter-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-2);
+  }
+  
+  .filter-toggle {
+    font-size: var(--font-size-xs);
+    padding: var(--space-1) var(--space-2);
+  }
+}
+
+/* Category article grid adjustments */
+@media (max-width: 639px) {
+  .category-featured {
+    margin-bottom: var(--space-6);
+  }
+  
+  .category-articles {
+    padding-top: var(--space-6);
+  }
+  
+  /* Alternate layout card becomes standard stacked layout */
+  .article-card.alt-layout {
+    display: block;
+  }
+  
+  .article-card.alt-layout .card-content {
+    order: 1; /* Content after image */
+  }
+}
+
+/* Trending topics grid responsiveness */
+@media (max-width: 639px) {
+  .topics-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-3);
+  }
+  
+  .topic-card {
+    padding: var(--space-3);
+  }
+}
+
+@media (min-width: 640px) and (max-width: 1023px) {
+  .topics-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .topics-grid {
+    grid-template-columns: repeat(6, 1fr);
+  }
+}
+
+/* Load more button behavior */
+.load-more-container {
+  margin: var(--space-8) 0;
+  text-align: center;
+}
+
+.load-more {
+  min-width: 200px;
+}
+
+/* ============================================
+   Component-Specific Responsive Behavior
+   Lines 315-402
+   ============================================ */
+
+/* Newsletter section adjustments */
+@media (max-width: 639px) {
+  .newsletter {
+    padding: var(--space-8) 0;
+  }
+  
+  .newsletter-form {
+    flex-direction: column;
+    width: 100%;
+  }
+  
+  .newsletter-form button {
+    width: 100%;
+    margin-top: var(--space-3);
+  }
+}
+
+/* Footer adaptations */
+@media (max-width: 767px) {
+  .site-footer {
+    padding: var(--space-8) 0 var(--space-4);
+  }
+  
+  .footer-content {
+    grid-template-columns: 1fr;
+    gap: var(--space-6);
+  }
+  
+  .footer-nav {
+    grid-template-columns: 1fr 1fr;
+  }
+  
+  .footer-bottom {
+    margin-top: var(--space-6);
+    flex-direction: column;
+    text-align: center;
+    gap: var(--space-4);
+  }
+}
+
+/* Card variations responsive adjustments */
+@media (max-width: 767px) {
+  /* Featured card standard treatment */
+  .article-card.featured {
+    grid-column: span 1;
+  }
+  
+  /* Quote card adjustments */
+  .card-quote {
+    font-size: var(--font-size-base);
+    padding: var(--space-3) 0;
+  }
+  
+  /* Video card indicator positioning */
+  .video-indicator {
+    bottom: var(--space-2);
+    right: var(--space-2);
+    padding: var(--space-1) var(--space-2);
+  }
+  
+  .video-icon {
+    font-size: var(--font-size-sm);
+  }
+  
+  .video-duration {
+    font-size: var(--font-size-xs);
+  }
+}
+
+/* Author mini component responsive adjustment */
+@media (max-width: 639px) {
+  .author-mini {
+    display: flex;
+    align-items: center;
+    margin-bottom: var(--space-2);
+  }
+  
+  .author-mini-image {
+    width: 24px;
+    height: 24px;
+    margin-right: var(--space-2);
+  }
+  
+  .author-mini-name {
+    font-size: var(--font-size-xs);
+  }
+}
+
+/* Accent card responsive treatment */
+@media (max-width: 767px) {
+  .accent-card::before {
+    width: 4px;
+  }
+}
+
+/* Paywall overlay responsive adjustments */
+@media (max-width: 639px) {
+  .paywall-overlay {
+    font-size: var(--font-size-md);
+    padding: var(--space-2);
+  }
+}
+
+/* ============================================
+   Animation & Transition Adjustments
+   Lines 404-430
+   ============================================ */
+
+/* Reduce motion for users who prefer it */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  
+  .featured-image img,
+  .card-image img {
+    transform: none !important;
+  }
+  
+  .animate-on-scroll,
+  .reveal-on-scroll {
+    transition: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
+
+/* Faster transitions on mobile devices for better performance */
+@media (max-width: 767px) {
+  .article-card {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+  
+  .card-image img {
+    transition: transform 0.3s ease;
+  }
+}
+
+/* ============================================
+   Print Styles for Articles
+   Lines 432-477
+   ============================================ */
+
+@media print {
+  /* Reset all backgrounds and colors for readability */
+  * {
+    background: transparent !important;
+    color: #000 !important;
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+  
+  /* Hide unnecessary elements */
+  .site-header,
+  .site-footer,
+  .newsletter,
+  .more-articles,
+  .share-links,
+  .reading-progress-container,
+  .paywall-overlay {
+    display: none !important;
+  }
+  
+  /* Remove blur effect from paywalled content for printing */
+  .paywall-blur {
+    filter: none !important;
+  }
+  
+  .paywall-text::after {
+    display: none !important;
+  }
+  
+  /* Optimize layout for print */
+  .container {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+  
+  /* Adjust typography for print */
+  body {
+    font-size: 12pt;
+    line-height: 1.4;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    page-break-after: avoid;
+    page-break-inside: avoid;
+  }
+  
+  img {
+    max-width: 100% !important;
+    page-break-inside: avoid;
+  }
+  
+  /* Add URL after links for better reference */
+  a[href^="http"]::after {
+    content: " (" attr(href) ")";
+    font-size: 90%;
+    font-style: italic;
+  }
+  
+  /* Optimize article layout for print */
+  .article-content .container {
+    display: block !important;
+  }
+  
+  .article-sidebar {
+    border-top: 1px solid #000;
+    padding-top: 1em;
+    margin-top: 2em;
+  }
+}
