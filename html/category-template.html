@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chemical Escapes | Bad Dog Entertainment</title>
+  <link rel="stylesheet" href="../style.css">
+  <!-- Meta description for SEO optimization -->
+  <meta name="description" content="Explore the world of designer drugs, pharmaceutical diversions, and chemical recreation from the perspective of entitled American excess.">
+</head>
+<body class="category-page chemical">
+  <!-- 
+    Site Header Component
+    - Includes global navigation and branding
+    - Sticky positioning with scroll behavior managed in main.js
+    - Lines 14-40
+  -->
+  <header class="site-header">
+    <div class="container">
+      <div class="header-top">
+        <a href="index.html" class="logo">Bad Dog Entertainment</a>
+        <nav class="main-nav">
+          <ul>
+            <li><a href="category.html?category=chemical" class="nav-link chemical active">Chemical Escapes</a></li>
+            <li><a href="category.html?category=afterhours" class="nav-link afterhours">After Hours</a></li>
+            <li><a href="category.html?category=exotic" class="nav-link exotic">Exotic Tastes</a></li>
+            <li><a href="category.html?category=luxury" class="nav-link luxury">Luxury Excess</a></li>
+            <li><a href="category.html?category=degenerate" class="nav-link degenerate">Degenerate Lifestyle</a></li>
+          </ul>
+        </nav>
+        <button class="menu-toggle" aria-label="Toggle Menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- 
+    Category Hero Section 
+    - Visually establishes the category identity
+    - Includes pattern background specific to category
+    - Contains category description and filter controls
+    - Lines 42-65
+  -->
+  <section class="category-hero">
+    <div class="pattern-background pattern-chemical"></div>
+    <div class="container">
+      <div class="category-hero-content">
+        <h1 class="category-title">Chemical Escapes</h1>
+        <p class="category-description">Exploring designer drugs, pharmaceutical diversions, and chemical recreation from the perspective of entitled American excess. From trust fund biochemists to celebrity pharmacists, we document the chemical pursuits of privilege.</p>
+        
+        <!-- Category filter controls -->
+        <div class="category-filters">
+          <span class="filter-label">Filter:</span>
+          <div class="filter-buttons">
+            <button class="filter-toggle active" data-category="all">All</button>
+            <button class="filter-toggle" data-category="designer">Designer</button>
+            <button class="filter-toggle" data-category="pharmaceutical">Pharmaceutical</button>
+            <button class="filter-toggle" data-category="research">Research</button>
+            <button class="filter-toggle" data-category="culture">Culture</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 
+    Featured Article Section
+    - Highlights the primary article for this category
+    - Implemented using featured-grid from grid.css
+    - Includes paywall treatment with blur effect
+    - Lines 67-92
+  -->
+  <section class="category-featured">
+    <div class="container">
+      <div class="featured-grid">
+        <div class="featured-content">
+          <span class="category-pill chemical">Chemical Escapes</span>
+          <h2 class="featured-title">The New Designer Drug That's Taking Over Hamptons Pool Parties</h2>
+          <p class="lead">What happens when trust fund biochemists get bored? A new synthetic compound that costs $400 per dose and lasts just long enough to avoid confronting reality.</p>
+          <div class="article-meta">
+            <span class="byline">By Privilege McEntitled</span>
+            <span class="metadata">Published Yesterday • 10 Min Read</span>
+          </div>
+          <a href="article.html" class="btn primary">Read Article</a>
+        </div>
+        <div class="featured-image paywall-blur">
+          <img src="https://source.unsplash.com/random/1200x800/?pills,luxury" alt="Designer drugs at Hamptons pool parties">
+          <div class="paywall-overlay">PAY ME TO SEE</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 
+    Article Grid Section
+    - Main content area displaying article cards
+    - Utilizes article-grid layout from grid.css
+    - Implements staggered layout for visual interest
+    - Includes multiple variations of article cards
+    - Lines 94-247
+  -->
+  <section class="category-articles">
+    <div class="container">
+      <h2 class="section-title">Latest Articles</h2>
+      
+      <div class="article-grid">
+        <!-- Standard article card -->
+        <article class="article-card designer animate-on-scroll">
+          <a href="article.html" class="article-link">
+            <div class="card-image paywall-blur">
+              <img src="https://source.unsplash.com/random/600x400/?laboratory" alt="Article image">
+            </div>
+            <div class="card-content">
+              <h3>Inside the Secret Labs Creating the Next Generation of Psychedelics</h3>
+              <p class="excerpt">How Silicon Valley engineers and venture capitalists are funding a new wave of consciousness-altering compounds designed for productivity instead of pleasure.</p>
+              <div class="article-meta">
+                <span class="metadata">13 Min Read</span>
+              </div>
+            </div>
+          </a>
+        </article>
+        
+        <!-- Article card with paywall text -->
+        <article class="article-card pharmaceutical animate-on-scroll">
+          <a href="article.html" class="article-link">
+            <div class="card-image paywall-blur">
+              <img src="https://source.unsplash.com/random/600x400/?pharmacy" alt="Article image">
+            </div>
+            <div class="card-content">
+              <h3>When Prescription Isn't Enough: The Celebrity Pharmacist to the Stars</h3>
+              <p class="excerpt paywall-text">Meet Dr. Fillmore, the pharmacist who's never met a prescription he couldn't "enhance" for his A-list clientele.</p>
+              <div class="article-meta">
+                <span class="metadata">8 Min Read</span>
+              </div>
+            </div>
+          </a>
+        </article>
+        
+        <!-- Article card with quote highlight -->
+        <article class="article-card research animate-on-scroll">
+          <a href="article.html" class="article-link">
+            <div class="card-image paywall-blur">
+              <img src="https://source.unsplash.com/random/600x400/?microscope" alt="Article image">
+            </div>
+            <div class="card-content">
+              <h3>The Billionaire's Quest to Patent Euphoria</h3>
+              <p class="excerpt">A tech mogul has spent $50 million pursuing a compound that creates "happiness without side effects." Scientists say it's impossible. He says they lack vision.</p>
+              <blockquote class="card-quote">"I'm not trying to get high. I'm trying to own the concept of getting high."</blockquote>
+              <div class="article-meta">
+                <span class="metadata">15 Min Read</span>
+              </div>
+            </div>
+          </a>
+        </article>
+        
+        <!-- Large article card spanning 2 columns -->
+        <article class="article-card culture featured animate-on-scroll col-span-2 md:col-span-2">
+          <a href="article.html" class="article-link">
+            <div class="card-image paywall-blur">
+              <img src="https://source.unsplash.com/random/1200x600/?party,drugs" alt="Article image">
+            </div>
+            <div class="card-content">
+              <h3>The New Narco-Aesthetics: How Drug Culture is Reshaping Luxury Interior Design</h3>
+              <p class="excerpt">From cocaine-white minimalism to psychedelic maximalism, how chemical preferences are influencing high-end home décor and art collecting.</p>
+              <div class="article-meta">
+                <span class="metadata">11 Min Read</span>
+              </div>
+            </div>
+          </a>
+        </article>
+        
+        <!-- Alternative layout card -->
+        <article class="article-card designer alt-layout animate-on-scroll">
+          <a href="article.html" class="article-link">
+            <div class="card-content">
+              <h3>Trust Fund Chemistry: The Amateur Chemists Creating Bespoke Compounds</h3>
+              <p class="excerpt">With private labs, expensive equipment, and chemistry degrees they never needed to use professionally, these heirs are creating their own personal pharmacopeias.</p>
+              <div class="article-meta">
+                <span class="metadata">9 Min Read</span>
+              </div>
+            </div>
+            <div class="card-image paywall-blur">
+              <img src="https://source.unsplash.com/random/600x400/?chemistry" alt="Article image">
+            </div>
+          </a>
+        </article>
+        
+        <!-- Article card with author highlight -->
+        <article class="article-card pharmaceutical animate-on-scroll">
+          <a href="article.html" class="article-link">
+            <div class="card-image paywall-blur">
+              <img src="https://source.unsplash.com/random/600x400/?medicine" alt="Article image">
+            </div>
+            <div class="card-content">
+              <h3>The Prescription Underground: How the 1% Get Access to Experimental Medications</h3>
+              <p class="excerpt">Inside the shadow healthcare system where FDA approval is just a suggestion and wealth bypasses clinical trials.</p>
+              <div class="article-meta">
+                <div class="author-mini">
+                  <img src="https://source.unsplash.com/random/100x100/?portrait" alt="Author" class="author-mini-image">
+                  <span class="author-mini-name">By Dr. Skeptical</span>
+                </div>
+                <span class="metadata">12 Min Read</span>
+              </div>
+            </div>
+          </a>
+        </article>
+        
+        <!-- Article card with background accent -->
+        <article class="article-card research accent-card animate-on-scroll">
+          <a href="article.html" class="article-link">
+            <div class="card-image paywall-blur">
+              <img src="https://source.unsplash.com/random/600x400/?research" alt="Article image">
+            </div>
+            <div class="card-content">
+              <h3>The Nootropic Arms Race: Silicon Valley's Chemical Productivity War</h3>
+              <p class="excerpt paywall-text">As tech executives push their cognitive enhancement regimens to extremes, medical professionals warn of an impending mental health crisis.</p>
+              <div class="article-meta">
+                <span class="metadata">14 Min Read</span>
+              </div>
+            </div>
+          </a>
+        </article>
+        
+        <!-- Article card with video indicator -->
+        <article class="article-card culture video-card animate-on-scroll">
+          <a href="article.html" class="article-link">
+            <div class="card-image paywall-blur">
+              <img src="https://source.unsplash.com/random/600x400/?nightclub" alt="Article image">
+              <div class="video-indicator">
+                <span class="video-icon">▶</span>
+                <span class="video-duration">08:42</span>
+              </div>
+            </div>
+            <div class="card-content">
+              <h3>Inside the Private Clubs Where Chemical Experimentation is the Main Attraction</h3>
+              <p class="excerpt">Members-only venues in major cities are offering curated experiences combining rare compounds, luxury environments, and medical supervision.</p>
+              <div class="article-meta">
+                <span class="metadata">Video • 8 Min</span>
+              </div>
+            </div>
+          </a>
+        </article>
+      </div>
+      
+      <!-- Load more articles button -->
+      <div class="load-more-container">
+        <button class="btn secondary load-more">Load More Articles</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- 
+    Trending Topics Section
+    - Shows popular topics/tags within the category
+    - Implemented with flex layout for responsive behavior
+    - Uses pattern-background for visual consistency
+    - Lines 249-273
+  -->
+  <section class="trending-topics">
+    <div class="pattern-background pattern-chemical"></div>
+    <div class="container">
+      <h2 class="section-title">Trending Topics</h2>
+      <div class="topics-grid">
+        <a href="#" class="topic-card">
+          <span class="topic-name">Microdosing</span>
+          <span class="topic-count">24 Articles</span>
+        </a>
+        <a href="#" class="topic-card">
+          <span class="topic-name">Pharmaceuticals</span>
+          <span class="topic-count">18 Articles</span>
+        </a>
+        <a href="#" class="topic-card">
+          <span class="topic-name">Research Chemicals</span>
+          <span class="topic-count">15 Articles</span>
+        </a>
+        <a href="#" class="topic-card">
+          <span class="topic-name">Synthetic Highs</span>
+          <span class="topic-count">12 Articles</span>
+        </a>
+        <a href="#" class="topic-card">
+          <span class="topic-name">Nootropics</span>
+          <span class="topic-count">11 Articles</span>
+        </a>
+        <a href="#" class="topic-card">
+          <span class="topic-name">Designer Psychedelics</span>
+          <span class="topic-count">9 Articles</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 
+    Newsletter Section 
+    - Email capture form for audience retention
+    - Uses category-specific styling for visual consistency
+    - Form validation handled in main.js
+    - Lines 275-292
+  -->
+  <section class="newsletter category-newsletter chemical">
+    <div class="container">
+      <div class="newsletter-content">
+        <h2>Stay Chemically Informed</h2>
+        <p>Get the latest in chemical escapism delivered straight to your inbox. No judgment, just journalistic excellence.</p>
+        <form class="newsletter-form">
+          <input type="email" placeholder="Your email address" required>
+          <button type="submit" class="btn secondary">Subscribe</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- 
+    Site Footer
+    - Global footer with navigation and legal information
+    - Consistent across all page templates
+    - Lines 294-337
+  -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-branding">
+          <a href="index.html" class="footer-logo">Bad Dog Entertainment</a>
+          <p class="footer-tagline">Celebrating excess since yesterday</p>
+        </div>
+        <div class="footer-nav">
+          <div class="footer-nav-column">
+            <h4>Categories</h4>
+            <ul>
+              <li><a href="category.html?category=chemical">Chemical Escapes</a></li>
+              <li><a href="category.html?category=afterhours">After Hours</a></li>
+              <li><a href="category.html?category=exotic">Exotic Tastes</a></li>
+              <li><a href="category.html?category=luxury">Luxury Excess</a></li>
+              <li><a href="category.html?category=degenerate">Degenerate Lifestyle</a></li>
+            </ul>
+          </div>
+          <div class="footer-nav-column">
+            <h4>About</h4>
+            <ul>
+              <li><a href="#">Our Story</a></li>
+              <li><a href="#">Contributors</a></li>
+              <li><a href="#">Join Us</a></li>
+              <li><a href="#">Advertise</a></li>
+            </ul>
+          </div>
+          <div class="footer-nav-column">
+            <h4>Legal</h4>
+            <ul>
+              <li><a href="#">Terms of Service</a></li>
+              <li><a href="#">Privacy Policy</a></li>
+              <li><a href="#">Cookie Policy</a></li>
+              <li><a href="#">Content Guidelines</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 Bad Dog Entertainment. All rights reserved.</p>
+        <div class="social-links">
+          <a href="#" aria-label="Instagram">IG</a>
+          <a href="#" aria-label="Twitter">TW</a>
+          <a href="#" aria-label="TikTok">TT</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- JavaScript imports -->
+  <script src="/js/main.js"></script>
+  <script src="/js/content-filter.js"></script>
+</body>
+</html>
